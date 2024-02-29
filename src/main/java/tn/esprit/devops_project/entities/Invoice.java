@@ -39,6 +39,9 @@ public class Invoice implements Serializable {
     @ManyToOne
     @JsonIgnore
     Supplier supplier;
+	public Invoice(Long idInvoice) {
+		this.idInvoice = idInvoice;
 
+	}
 	
 }
