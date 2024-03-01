@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.8'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'org.sonarqube' version '3.3'
+    id 'jacoco'
+}
+
+group 'tn.esprit.devops_project'
+version '2.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.8.0'
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.8.0'
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml {
+            enabled true
+        }
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.8"
+}
