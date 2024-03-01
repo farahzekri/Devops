@@ -7,6 +7,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import tn.esprit.devops_project.entities.Invoice;
 import tn.esprit.devops_project.repositories.InvoiceRepository;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 
@@ -58,10 +60,10 @@ class InvoiceServiceImplTest {
         verify(invoiceRepository, times(1)).save(invoice);
     }
 
-    @Test
-    void retrieveInvoice() {
+    @ParameterizedTest
+    @ValueSource(longs = {1L, 2L, 3L, 4L}) // Different invoice IDs to test
+    void retrieveInvoice(Long invoiceId) {
         // Given
-        Long invoiceId = 1L;
         Invoice expectedInvoice = new Invoice(invoiceId);
         when(invoiceRepository.findById(invoiceId)).thenReturn(Optional.of(expectedInvoice));
 
@@ -72,10 +74,10 @@ class InvoiceServiceImplTest {
         assertEquals(expectedInvoice, actualInvoice);
     }
 
-    @Test
-    void getInvoicesBySupplier() {
+    @ParameterizedTest
+    @ValueSource(longs = {1L, 2L, 3L, 4L}) // Different invoice IDs to test
+    void getInvoicesBySupplier(Long invoiceId) {
         // Given
-        Long invoiceId = 1L;
         Invoice expectedInvoice = new Invoice(invoiceId);
         when(invoiceRepository.findById(invoiceId)).thenReturn(Optional.of(expectedInvoice));
 
@@ -86,10 +88,10 @@ class InvoiceServiceImplTest {
         assertEquals(expectedInvoice, actualInvoice);
     }
 
-    @Test
-    void assignOperatorToInvoice() {
+    @ParameterizedTest
+    @ValueSource(longs = {1L, 2L, 3L, 4L}) // Different invoice IDs to test
+    void assignOperatorToInvoice(Long invoiceId) {
         // Given
-        Long invoiceId = 1L;
         Invoice expectedInvoice = new Invoice(invoiceId);
         when(invoiceRepository.findById(invoiceId)).thenReturn(Optional.of(expectedInvoice));
 
@@ -100,10 +102,10 @@ class InvoiceServiceImplTest {
         assertEquals(expectedInvoice, actualInvoice);
     }
 
-    @Test
-    void getTotalAmountInvoiceBetweenDates() {
+    @ParameterizedTest
+    @ValueSource(longs = {1L, 2L, 3L, 4L}) // Different invoice IDs to test
+    void getTotalAmountInvoiceBetweenDates(Long invoiceId) {
         // Given
-        Long invoiceId = 1L;
         Invoice expectedInvoice = new Invoice(invoiceId);
         when(invoiceRepository.findById(invoiceId)).thenReturn(Optional.of(expectedInvoice));
 
