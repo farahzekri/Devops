@@ -28,4 +28,12 @@ public class ActivitySector  implements Serializable {
         @JsonIgnore
         private Set<Supplier> suppliers;
 
+        public ActivitySector(long idSecteurActivite, String libelleSecteurActivite) {
+            this.idSecteurActivite = idSecteurActivite;
+            this.libelleSecteurActivite = libelleSecteurActivite;
+        }
+        public String getName() {
+                return this.libelleSecteurActivite;
+        }
+
 }
