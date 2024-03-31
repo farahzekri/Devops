@@ -2,9 +2,10 @@ version: "3.8"
 
 services:
   mysqldb:
-    image: mysql:8.3.0
+    image: mysql:8.0
     restart: always
     environment:
+      MYSQL_ROOT_PASSWORD: ""
       MYSQL_USER: "root"
       MYSQL_DATABASE: "devops"
     ports:
