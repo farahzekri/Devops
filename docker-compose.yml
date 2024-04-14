@@ -25,6 +25,8 @@ services:
             "spring.datasource.password": "123456",
             "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
             "spring.jpa.hibernate.ddl-auto": "update"
+            "management.endpoints.web.exposure.include": "*",
+          "management.endpoint.health.show-details": "always"
           }'
       command: --allow-public-key-retrieval=true
 
