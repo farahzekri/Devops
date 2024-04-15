@@ -29,7 +29,10 @@ services:
             "management.endpoint.health.show-details": "always",
             "management.endpoint.prometheus.enabled": "true"
           }'
-      command: --allow-public-key-retrieval=true
+      command:
+        --allow-public-key-retrieval=true
+        - --cors-allowed-origins=*
+
 
       volumes:
         -.m2:/root/.m2
