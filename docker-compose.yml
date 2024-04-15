@@ -24,7 +24,8 @@ services:
             "spring.datasource.username": "root",
             "spring.datasource.password": "123456",
             "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
-            "spring.jpa.hibernate.ddl-auto": "update"
+            "spring.jpa.hibernate.ddl-auto": "update",
+            "management.endpoints.web.exposure.include" : "*"
           }'
       command: --allow-public-key-retrieval=true
 
