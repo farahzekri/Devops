@@ -77,13 +77,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>3.2.0</version>
         </dependency>
+        <!-- Dépendance io.micrometer:micrometer-registry-prometheus -->
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
-            <version>1.11.5</version>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
