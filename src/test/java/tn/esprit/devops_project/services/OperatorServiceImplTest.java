@@ -19,6 +19,7 @@ import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OperatorServiceImplTest {
+
         @InjectMocks
         OperatorServiceImpl operatorService;
         @Mock
